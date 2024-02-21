@@ -5,4 +5,5 @@
 section.hero {
     @apply grid;
     grid-template-columns: .4fr .6fr;
+    min-height: calc(100vh - 40px);
 }

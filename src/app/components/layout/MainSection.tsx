@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function MainSection() {
     return (
         <section className="hero">
-            <div className="py-12">
-                <h1 className="text-4xl font-semibold">
+            <div className="py-20">
+                <h1 className="text-5xl font-semibold">
                     Acabe logo <br />
                     com a <br />
                     sua&nbsp;
@@ -26,8 +26,8 @@ export default function MainSection() {
             <div className="relative">
                 <Image
                     src='/img/burguer.png'
-                    layout='fill'
-                    objectFit="contain"
+                    fill
+                    objectFit="cover"
                     alt="hamburguer"
                 />
             </div>
