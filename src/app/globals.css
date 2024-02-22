@@ -3,7 +3,20 @@
 @tailwind utilities;
 
 section.hero {
-    @apply grid;
+    @apply block md:grid;
     grid-template-columns: .4fr .6fr;
     min-height: calc(100vh - 40px);
+}
+
+section.hero .shape {
+    @apply hidden md:block;
+    background-color: #f13a01;
+    opacity: 70%;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    border-radius: 40% 20% 0% 20%;
+    top: 1;
+    right: 0;
+    z-index: -1;
 }
