@@ -21,8 +21,8 @@ export default function Header() {
                 <div className="md:hidden p-4 bg-gray-200 rounded-lg mt-2 text-center">
                     <nav className="flex flex-col items-center gap-2 text-gray-500 
                 font-semibold">
-                        <Link href=''>Home</Link>
-                        <Link href=''>Menu</Link>
+                        <Link href='/'>Home</Link>
+                        <Link href='/menu'>Menu</Link>
                         <Link href=''>Contato</Link>
                     </nav>
                 </div>
@@ -33,15 +33,9 @@ export default function Header() {
                     RAPIDEX
                 </Link>
                 <nav className="flex items-center gap-8 text-gray-500 font-semibold">
-                    <Link href=''>Home</Link>
-                    <Link href=''>Menu</Link>
-                    {/* <Link href=''>Sobre</Link> */}
+                    <Link href='/'>Home</Link>
+                    <Link href='/menu'>Menu</Link>
                     <Link href=''>Contato</Link>
-                    {/* <Link className="bg-primary rounded-full text-white px-8 py-2"
-                        href=''
-                    >
-                        Login
-                    </Link> */}
                 </nav>
             </div>
 

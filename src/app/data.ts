@@ -1,6 +1,6 @@
 import { MenuItemProps } from "./types";
 
-export const products: MenuItemProps[] = [
+export const burgers: MenuItemProps[] = [
     {
         id: 1,
         image: '',
@@ -8,7 +8,6 @@ export const products: MenuItemProps[] = [
         description: 'pão, maionese, carne, queijo, alface, tomate, bacon',
         price: 15
     },
-
     {
         id: 2,
         image: '...',
@@ -16,7 +15,6 @@ export const products: MenuItemProps[] = [
         description: 'pão, maionese, carne, queijo, alface, tomate',
         price: 12
     },
-
     {
         id: 3,
         image: '...',
@@ -24,7 +22,6 @@ export const products: MenuItemProps[] = [
         description: 'pão, maionese, carne, queijo, ovo',
         price: 13
     },
-
     {
         id: 4,
         image: '...',
@@ -32,7 +29,6 @@ export const products: MenuItemProps[] = [
         description: 'pão, maionese, carne, queijo, alface, tomate, bacon, ovo',
         price: 18
     },
-
     {
         id: 5,
         image: '...',
@@ -40,7 +36,6 @@ export const products: MenuItemProps[] = [
         description: 'pão, maionese, frango desfiado, queijo, alface, tomate',
         price: 14
     },
-
     {
         id: 6,
         image: '...',
@@ -48,15 +43,6 @@ export const products: MenuItemProps[] = [
         description: 'pão, maionese, carne, queijo',
         price: 10
     },
-
-    {
-        id: 7,
-        image: '...',
-        name: 'X-Veggie',
-        description: 'pão, maionese vegana, hambúrguer de soja, queijo vegano, alface, tomate',
-        price: 16
-    },
-
     {
         id: 8,
         image: '...',
@@ -64,23 +50,6 @@ export const products: MenuItemProps[] = [
         description: 'pão, maionese, linguiça calabresa, queijo, alface, tomate',
         price: 13
     },
-
-    {
-        id: 9,
-        image: '...',
-        name: 'X-Fish',
-        description: 'pão, maionese, filé de peixe empanado, queijo, alface, tomate',
-        price: 17
-    },
-
-    {
-        id: 10,
-        image: '...',
-        name: 'X-Tropeiro',
-        description: 'pão, maionese, carne de sol desfiada, queijo coalho, feijão tropeiro',
-        price: 20
-    },
-
     {
         id: 11,
         image: '...',
@@ -88,36 +57,77 @@ export const products: MenuItemProps[] = [
         description: 'pão artesanal, maionese trufada, carne angus, queijo brie, cebola caramelizada, rúcula',
         price: 25
     },
-
-    {
-        id: 12,
-        image: '...',
-        name: 'X-Burger Duplo',
-        description: 'pão, maionese, dobro de carne, queijo',
-        price: 18
-    },
-
-    {
-        id: 13,
-        image: '...',
-        name: 'X-Bacon Duplo',
-        description: 'pão, maionese, dobro de carne, queijo, alface, tomate, bacon',
-        price: 20
-    },
-
-    {
-        id: 14,
-        image: '...',
-        name: 'X-Veggie Deluxe',
-        description: 'pão integral, maionese vegana, hambúrguer de quinoa e cogumelos, queijo vegano, abacate, rúcula',
-        price: 22
-    },
-
     {
         id: 15,
         image: '...',
         name: 'X-Cheese',
         description: 'pão, maionese, muito queijo',
         price: 11
+    },
+]
+
+export const drinks = [
+    {
+        id: 16,
+        image: '...',
+        name: 'Coca-Cola',
+        description: 'Refrigerante de cola',
+        price: 5,
+    },
+
+    {
+        id: 17,
+        image: '...',
+        name: 'Guaraná Antarctica',
+        description: 'Refrigerante de guaraná',
+        price: 4,
+    },
+
+    {
+        id: 18,
+        image: '...',
+        name: 'Fanta Laranja',
+        description: 'Refrigerante de laranja',
+        price: 4,
+    },
+
+    {
+        id: 19,
+        image: '...',
+        name: 'Sprite',
+        description: 'Refrigerante de limão-limão',
+        price: 4,
+    },
+
+    {
+        id: 20,
+        image: '...',
+        name: 'Suco de Laranja',
+        description: 'Suco natural de laranja',
+        price: 6,
+    },
+
+    {
+        id: 21,
+        image: '...',
+        name: 'Suco de Uva',
+        description: 'Suco natural de uva',
+        price: 6,
+    },
+
+    {
+        id: 22,
+        image: '...',
+        name: 'Água Mineral',
+        description: 'Água pura sem gás',
+        price: 3,
+    },
+
+    {
+        id: 23,
+        image: '...',
+        name: 'Água com Gás',
+        description: 'Água carbonatada',
+        price: 3,
     },
 ]
