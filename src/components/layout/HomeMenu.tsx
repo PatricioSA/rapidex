@@ -1,9 +1,9 @@
 import { burgers } from "@/app/data";
 import MenuItem from "../MenuItem";
-import { MenuItemProps } from "../../app/types";
+import { Product } from "../../app/types";
 
 export default function HomeMenu() {
-    const maisVendidos: MenuItemProps[] = []
+    const maisVendidos: Product[] = []
     const selectedIndices: number[] = [];
 
     while (maisVendidos.length < 3) {

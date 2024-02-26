@@ -1,10 +1,12 @@
 'use client'
+import { CartContext } from "@/context/AppProvider";
 import Link from "next/link"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { TfiMenu } from "react-icons/tfi";
 
 export default function Header() {
     const [mobileNavOpen, setMobileNavOpen] = useState(false)
+    const { cartProducts } = useContext(CartContext)
 
     return (
         <header>
@@ -15,6 +17,9 @@ export default function Header() {
                 <button onClick={() => setMobileNavOpen(prevState => !prevState)}>
                     <TfiMenu size={25} />
                 </button>
+                {cartProducts.length > 0 && (
+                    <Link href={''}>Cart {cartProducts.length}</Link>
+                )}
             </div>
 
             {mobileNavOpen && (
@@ -36,6 +41,9 @@ export default function Header() {
                     <Link href='/'>Home</Link>
                     <Link href='/menu'>Menu</Link>
                     <Link href=''>Contato</Link>
+                    {cartProducts.length > 0 && (
+                        <Link href={''}>Cart {cartProducts.length}</Link>
+                    )}
                 </nav>
             </div>
 

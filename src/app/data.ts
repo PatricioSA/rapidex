@@ -1,6 +1,6 @@
-import { MenuItemProps } from "./types";
+import { Product } from "./types";
 
-export const burgers: MenuItemProps[] = [
+export const burgers: Product[] = [
     {
         id: 1,
         image: '',
