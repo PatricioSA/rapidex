@@ -11,9 +11,8 @@ export default function MenuPage() {
                 {burguers.map((product) => (
                     <MenuItem
                         key={product.id}
-                        name={product.name}
-                        description={product.description}
-                        price={product.price}
+                        product={product}
+                        image={product.image}
                     />
                 ))}
             </div>
@@ -24,9 +23,8 @@ export default function MenuPage() {
                 {drinks.map((product) => (
                     <MenuItem
                         key={product.id}
-                        name={product.name}
-                        description={product.description}
-                        price={product.price}
+                        product={product}
+                        image={product.image}
                     />
                 ))}
             </div>

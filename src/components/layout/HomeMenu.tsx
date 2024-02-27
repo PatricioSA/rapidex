@@ -30,9 +30,8 @@ export default function HomeMenu() {
                 {maisVendidos.map((product) => (
                     <MenuItem
                         key={product.id}
-                        name={product.name}
-                        description={product.description}
-                        price={product.price}
+                        product={product}
+                        image={product.image}
                     />
                 ))}
             </div>
