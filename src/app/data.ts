@@ -10,14 +10,14 @@ export const burguers: Product[] = [
     },
     {
         id: 2,
-        image: '/img/x-bacon.png',
+        image: '/img/x-salada.png',
         name: 'X-Salada',
-        description: 'pão, maionese, carne, queijo, alface, tomate',
+        description: 'pão, maionese, carne, queijo, alface, tomate, azeitona',
         price: 12
     },
     {
         id: 3,
-        image: '/img/x-bacon.png',
+        image: '/img/x-egg.png',
         name: 'X-Egg',
         description: 'pão, maionese, carne, queijo, ovo',
         price: 13
