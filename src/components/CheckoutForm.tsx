@@ -1,6 +1,7 @@
 'use client'
 
 import { CartContext } from "@/context/AppProvider"
+import { useRouter } from "next/navigation"
 import { FormEvent, useContext, useState } from "react"
 
 export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
@@ -9,10 +10,16 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
     const [phoneNumber, setPhoneNumber] = useState('')
     const [observations, setObservations] = useState('')
 
-    const {cartProducts} = useContext(CartContext)
+    const {cartProducts, clearCart} = useContext(CartContext)
+    const router = useRouter()
 
     const onHandleSubmit = (e: FormEvent) => {
         e.preventDefault()
+
+        if(cartProducts.length === 0) {
+            alert('O carrinho está vazio')
+            return
+        }
 
         const productsNames = cartProducts.map(product => product.name).join(', ');
 
@@ -31,6 +38,9 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
         }).then(response => {
             if (response.ok) {
                 console.log('Mensagem enviada com sucesso');
+                clearCart()
+                clearInputs()
+                router.push('/order')
             } else {
                 console.error('Erro ao enviar mensagem:', response.statusText);
             }
@@ -39,8 +49,15 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
         });
     }
 
+    const clearInputs = () => {
+        setName('')
+        setAddress('')
+        setPhoneNumber('')
+        setObservations('')
+    }
+
     return (
-        <div className="bg-gray-100 p-4 rounded-lg">
+        <div className="bg-gray-100 p-4 rounded-lg max-h-[30rem]">
             <h2 className="font-semibold mb-4">Dados de entrega</h2>
 
             <form onSubmit={onHandleSubmit} className="checkoutForm">
@@ -79,7 +96,8 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                     ></textarea>
                 </div>
 
-                <button type="submit" className="mt-4 bg-primary text-white rounded px-8 py-2 w-full">
+                <button type="submit" className="bg-primary text-white font-semibold 
+                rounded px-8 py-2 mt-4 w-full">
                     Finalizar R${totalPrice}
                 </button>
             </form>
