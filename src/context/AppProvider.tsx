@@ -7,6 +7,7 @@ interface CartContextType {
     cartProducts: Product[];
     addToCart: (product: Product, extras?: any[]) => void;
     removeCartProducts: (indexToRemove: number) => void
+    clearCart: () => void
     setCartProducts: Dispatch<SetStateAction<Product[]>>
 }
 
@@ -14,6 +15,7 @@ export const CartContext = createContext<CartContextType>({
     cartProducts: [],
     addToCart: () => { },
     removeCartProducts: () => {},
+    clearCart: () => {},
     setCartProducts: () => { },
 })
 
@@ -43,6 +45,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         })
     }
 
+    const clearCart = () => {
+        setCartProducts([])
+        saveCartToLocalStorage([])
+    }
+
     function addToCart(product: Product) {
         setCartProducts(prevCartProducts => {
             const newCartProducts = [...prevCartProducts, product]
@@ -53,7 +60,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
     return (
         <CartContext.Provider value={{
-            cartProducts, setCartProducts, addToCart, removeCartProducts
+            cartProducts, setCartProducts, addToCart, removeCartProducts, clearCart
         }}>
             {children}
         </CartContext.Provider>
