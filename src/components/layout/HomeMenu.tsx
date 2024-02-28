@@ -1,4 +1,4 @@
-import { burgers } from "@/app/data";
+import { burguers } from "@/app/data";
 import MenuItem from "../MenuItem";
 import { Product } from "../../app/types";
 
@@ -7,11 +7,11 @@ export default function HomeMenu() {
     const selectedIndices: number[] = [];
 
     while (maisVendidos.length < 3) {
-        const sorteio = Math.floor(Math.random() * burgers.length)
+        const sorteio = Math.floor(Math.random() * burguers.length)
 
         if (!selectedIndices.includes(sorteio)) {
             selectedIndices.push(sorteio);
-            const maisVendido = burgers[sorteio];
+            const maisVendido = burguers[sorteio];
             maisVendidos.push(maisVendido);
         }
     }

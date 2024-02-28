@@ -1,5 +1,5 @@
 import MenuItem from "@/components/MenuItem";
-import { burgers as burguers, drinks } from "../data";
+import { burguers, drinks } from "../data";
 import Titles from "@/components/layout/Titles";
 
 export default function MenuPage() {
