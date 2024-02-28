@@ -20,3 +20,12 @@ section.hero .shape {
     right: 0;
     z-index: -1;
 }
+
+section.cartContainer {
+    min-height: calc(100vh - 250px)
+}
+
+.checkoutForm input, textarea {
+    width: 100%;
+    border-radius: 0.5rem;
+}
