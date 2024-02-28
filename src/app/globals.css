@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 section.hero {
-    @apply block md:grid;
-    grid-template-columns: .4fr .6fr;
+    @apply grid md:grid-cols-customGrid;
     min-height: calc(100vh - 40px);
 }
 

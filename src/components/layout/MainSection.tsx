@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function MainSection() {
     return (
         <section className="hero">
-            <div className="pt-20 md:pt-40 text-center md:text-start">
+            <div className="max-h-28 pt-20 md:pt-40 text-center md:text-start">
                 <h1 className="text-6xl font-semibold">
                     Acabe logo <br />
                     com a <br />

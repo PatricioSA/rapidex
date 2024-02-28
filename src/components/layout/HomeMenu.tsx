@@ -17,7 +17,7 @@ export default function HomeMenu() {
     }
 
     return (
-        <section className="p-2">
+        <section className="p-2 mt-8">
             <div className="text-center mb-4">
                 <h3 className="uppercase text-gray-500 font-semibold">
                     Confira

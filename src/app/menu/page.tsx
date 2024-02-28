@@ -4,7 +4,7 @@ import Titles from "@/components/layout/Titles";
 
 export default function MenuPage() {
     return (
-        <section>
+        <section className="mt-8">
             <Titles mainTitle="Hambúrgueres" subTitle="" />
 
             <div className="grid sm:grid-cols-3 gap-4 mt-4 mb-8">
