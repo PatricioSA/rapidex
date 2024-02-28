@@ -19,7 +19,7 @@ export default function CartPage() {
         <section className="cartContainer mt-8">
             <Titles mainTitle="Carrinho" subTitle="" />
 
-            <div className="grid grid-cols-2 gap-8 mt-4">
+            <div className="grid md:grid-cols-2 gap-8 mt-4">
                 <aside>
                     {cartProducts.length === 0 && (
                         <h1>Nenhum Produto</h1>

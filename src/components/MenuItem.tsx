@@ -40,7 +40,7 @@ export default function MenuItem({ product, image }: { product: Product, image: 
 
                 <button
                     onClick={handleAddToCart}
-                    className="mt-4 bg-primary text-white rounded-full px-8 py-2">
+                    className="mt-4 bg-primary text-white rounded-3xl px-6 py-2">
                     Adicionar ao carrinho R${price}
                 </button>
             </div>
