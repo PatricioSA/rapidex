@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        customGrid: '.4fr .6fr'
+      },
       colors: {
         primary: '#f13a01',
       }
