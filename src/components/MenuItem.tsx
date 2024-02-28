@@ -30,6 +30,7 @@ export default function MenuItem({ product, image }: { product: Product, image: 
                 <div onClick={onHandleCardClick} className="hover:cursor-pointer">
                     <img src={image} alt={name}
                         className="max-h-48 block mx-auto"
+                        loading="lazy"
                     />
 
                     <h4 className="font-semibold text-xl my-3">{name}</h4>
