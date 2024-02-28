@@ -1,10 +1,13 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import dotenv from 'dotenv'
 import twilio from 'twilio';
 
 const app = express();
-const port = 3000;
+const port = 3333;
+
+app.use(cors())
 dotenv.config()
 
 // Configurando o body-parser para lidar com solicitações POST
@@ -18,9 +21,9 @@ const client = twilio(accountSid, authToken);
 
 app.post('/api/enviar-mensagem', async (req: Request, res: Response) => {
 
-    const { nome, endereco, telefone, detalhesPedido } = req.body;
+    const { name, address, phoneNumber, orderDetails, observations } = req.body;
 
-    const mensagem = `Novo pedido!\nNome: ${nome}\nEndereço: ${endereco}\nTelefone: ${telefone}\nDetalhes do Pedido: ${detalhesPedido}`;
+    const mensagem = `Novo pedido!\n\nNome: ${name}\nEndereço: ${address}\nTelefone: ${phoneNumber}\nDetalhes do Pedido: ${orderDetails}\nObservações: ${observations}`;
 
     client.messages.create({
         from: 'whatsapp:+14155238886',
