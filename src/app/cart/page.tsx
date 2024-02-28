@@ -4,7 +4,6 @@
 import CheckoutForm from "@/components/CheckoutForm";
 import Titles from "@/components/layout/Titles";
 import { CartContext } from "@/context/AppProvider";
-import Image from "next/image";
 import { useContext } from "react";
 import { GoTrash } from "react-icons/go";
 
@@ -20,8 +19,8 @@ export default function CartPage() {
         <section className="cartContainer mt-8">
             <Titles mainTitle="Carrinho" subTitle="" />
 
-            <aside className="grid grid-cols-2 gap-8 mt-4">
-                <div>
+            <div className="grid grid-cols-2 gap-8 mt-4">
+                <aside>
                     {cartProducts.length === 0 && (
                         <h1>Nenhum Produto</h1>
                     )}
@@ -56,10 +55,10 @@ export default function CartPage() {
                     <p className="mt-4 text-lg">
                         Total: <span className="font-semibold">R${totalPrice}</span>
                     </p>
-                </div>
+                </aside>
 
-                <CheckoutForm/>
-            </aside>
+                <CheckoutForm totalPrice={totalPrice}/>
+            </div>
         </section>
     )
 }
