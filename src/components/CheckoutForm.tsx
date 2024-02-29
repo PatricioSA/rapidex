@@ -24,7 +24,7 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
 
         const productsNames = cartProducts.map(product => product.name).join(', ');
 
-        fetch('http://localhost:3333/api/enviar-mensagem', {
+        fetch('/api/enviar-mensagem', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
