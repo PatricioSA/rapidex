@@ -45,6 +45,7 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                 console.error('Erro ao enviar mensagem:', response.statusText);
             }
         }).catch(error => {
+            alert(error)
             console.error('Erro ao enviar mensagem:', error);
         });
     }
