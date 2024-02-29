@@ -66,7 +66,7 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
             <form onSubmit={onHandleSubmit} className="checkoutForm">
                 <div>
                     <label htmlFor="name">Nome</label> <br />
-                    <input type="text" name="name" required
+                    <input type="text" name="name" id="name" required
                         onChange={e => setName(e.target.value)}
                         value={name}
                     />
@@ -74,7 +74,7 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
 
                 <div>
                     <label htmlFor="address">Endereço</label> <br />
-                    <input type="text" name="address" placeholder="Rua Compre aqui, 145 - Bairro" required
+                    <input type="text" name="address" id="address" placeholder="Rua Compre aqui, 145 - Bairro" required
                         onChange={e => setAddress(e.target.value)}
                         value={address}
                     />
@@ -85,7 +85,7 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                         Telefone <br />
                         <small>Format: 32 91234-4567</small>
                     </label> <br />
-                    <input type="tel" name="phoneNumber" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="32 91234-4567" required
+                    <input type="tel" name="phoneNumber" id="phoneNumber" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="32 91234-4567" required
                         onChange={e => setPhoneNumber(e.target.value)}
                         value={phoneNumber}
                     />
@@ -113,7 +113,7 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
 
                 <div>
                     <label htmlFor="observations">Observações</label> <br />
-                    <textarea name="observations"
+                    <textarea name="observations" id="observations"
                         onChange={e => setObservations(e.target.value)}
                         value={observations}
                     ></textarea>
