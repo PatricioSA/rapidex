@@ -4,6 +4,7 @@
 import CheckoutForm from "@/components/CheckoutForm";
 import Titles from "@/components/layout/Titles";
 import { CartContext } from "@/context/AppProvider";
+import Link from "next/link";
 import { useContext } from "react";
 import { GoTrash } from "react-icons/go";
 
@@ -11,7 +12,7 @@ export default function CartPage() {
     const { cartProducts, removeCartProducts } = useContext(CartContext)
 
     let totalPrice = 0
-    for(const product of cartProducts) {
+    for (const product of cartProducts) {
         totalPrice += product.price
     }
 
@@ -22,7 +23,11 @@ export default function CartPage() {
             <div className="grid md:grid-cols-2 gap-8 mt-4">
                 <aside>
                     {cartProducts.length === 0 && (
-                        <h1>Nenhum Produto</h1>
+                        <div>
+                            <h1>Carrinho vazio</h1>
+                            <Link href={'/menu'} className="text-blue-500 underline 
+                            underline-offset-2 decoration-blue-600">Ir para o menu</Link>
+                        </div>
                     )}
                     {cartProducts.length > 0 && cartProducts.map((product, index) => (
                         <div key={index}
@@ -46,7 +51,7 @@ export default function CartPage() {
 
                             <div>
                                 <button onClick={() => removeCartProducts(index)}>
-                                    <GoTrash size={25}/>
+                                    <GoTrash size={25} />
                                 </button>
                             </div>
                         </div>
@@ -57,7 +62,7 @@ export default function CartPage() {
                     </p>
                 </aside>
 
-                <CheckoutForm totalPrice={totalPrice}/>
+                <CheckoutForm totalPrice={totalPrice} />
             </div>
         </section>
     )
