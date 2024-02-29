@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
+    "start": "ts-node server.ts",
     "dev:server": "tsx watch src/server.ts"
   },
   "keywords": [],
