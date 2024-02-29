@@ -24,52 +24,45 @@ export const burguers: Product[] = [
     },
     {
         id: 4,
-        image: '/img/x-bacon.png',
+        image: '/img/x-tudo.png',
         name: 'X-Tudo',
         description: 'pão, maionese, carne, queijo, alface, tomate, bacon, ovo',
         price: 18
     },
     {
         id: 5,
-        image: '/img/x-bacon.png',
+        image: '/img/x-frango.png',
         name: 'X-Frango',
         description: 'pão, maionese, frango desfiado, queijo, alface, tomate',
         price: 14
     },
     {
         id: 6,
-        image: '/img/x-bacon.png',
+        image: '/img/x-burguer.png',
         name: 'X-Burger',
         description: 'pão, maionese, carne, queijo',
         price: 10
     },
     {
         id: 8,
-        image: '/img/x-bacon.png',
+        image: '/img/x-calabresa.png',
         name: 'X-Calabresa',
         description: 'pão, maionese, linguiça calabresa, queijo, alface, tomate',
         price: 13
     },
     {
         id: 11,
-        image: '/img/x-bacon.png',
+        image: '/img/x-gourmet.png',
         name: 'X-Gourmet',
         description: 'pão artesanal, maionese trufada, carne angus, queijo brie, cebola caramelizada, rúcula',
         price: 25
-    },
-    {
-        id: 15,
-        image: '/img/x-bacon.png',
-        name: 'X-Cheese',
-        description: 'pão, maionese, muito queijo',
-        price: 11
     },
 ]
 
 export const drinks = [
     {
         id: 16,
-        image: '/',
+        image: '/img/coca-cola.png',
         name: 'Coca-Cola',
         description: 'Refrigerante de cola',
         price: 5,
@@ -77,23 +70,15 @@ export const drinks = [
 
     {
         id: 17,
-        image: '/',
+        image: '/img/guarana.png',
         name: 'Guaraná Antarctica',
         description: 'Refrigerante de guaraná',
         price: 4,
     },
 
     {
-        id: 18,
-        image: '/',
-        name: 'Fanta Laranja',
-        description: 'Refrigerante de laranja',
-        price: 4,
-    },
-
-    {
         id: 19,
-        image: '/',
+        image: '/img/sprite.png',
         name: 'Sprite',
         description: 'Refrigerante de limão-limão',
         price: 4,
@@ -101,7 +86,7 @@ export const drinks = [
 
     {
         id: 20,
-        image: '/',
+        image: '/img/suco-laranja.png',
         name: 'Suco de Laranja',
         description: 'Suco natural de laranja',
         price: 6,
@@ -109,23 +94,15 @@ export const drinks = [
 
     {
         id: 21,
-        image: '/',
+        image: '/img/suco-uva.png',
         name: 'Suco de Uva',
         description: 'Suco natural de uva',
         price: 6,
     },
 
     {
-        id: 22,
-        image: '/',
-        name: 'Água Mineral',
-        description: 'Água pura sem gás',
-        price: 3,
-    },
-
-    {
         id: 23,
-        image: '/',
+        image: '/img/agua-gas.png',
         name: 'Água com Gás',
         description: 'Água carbonatada',
         price: 3,
