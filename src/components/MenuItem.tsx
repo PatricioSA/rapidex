@@ -52,7 +52,7 @@ export default function MenuItem({ product, image }: { product: Product, image: 
                         <Image
                             src={image}
                             alt={name}
-                            width={200} height={100}
+                            width={400} height={400}
                             className="mx-auto"
                         />
                         <h2 className="text-lg font-bold mb-2">{name}</h2>
