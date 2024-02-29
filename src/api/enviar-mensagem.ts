@@ -2,7 +2,9 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import twilio from 'twilio';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+    const accountSid = process.env.TWILIO_ACCOUNT_SID;
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
+    const client = twilio(accountSid, authToken)
 
     const { name, address, phoneNumber, orderDetails, paymentMethod, observations } = req.body;
 
