@@ -21,9 +21,9 @@ const client = twilio(accountSid, authToken);
 
 app.post('/api/enviar-mensagem', async (req: Request, res: Response) => {
 
-    const { name, address, phoneNumber, orderDetails, observations } = req.body;
+    const { name, address, phoneNumber, orderDetails, paymentMethod, observations } = req.body;
 
-    const mensagem = `Novo pedido!\n\nNome: ${name}\nEndereço: ${address}\nTelefone: ${phoneNumber}\nDetalhes do Pedido: ${orderDetails}\nObservações: ${observations}`;
+    const mensagem = `Novo pedido!\n\nNome: ${name}\nEndereço: ${address}\nTelefone: ${phoneNumber}\nDetalhes do Pedido: ${orderDetails}\nMétodo de pagamento: ${paymentMethod}\nObservações: ${observations}`;
 
     client.messages.create({
         from: 'whatsapp:+14155238886',

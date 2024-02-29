@@ -9,14 +9,15 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
     const [address, setAddress] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
     const [observations, setObservations] = useState('')
+    const [paymentMethod, setPaymentMethod] = useState('')
 
-    const {cartProducts, clearCart} = useContext(CartContext)
+    const { cartProducts, clearCart } = useContext(CartContext)
     const router = useRouter()
 
     const onHandleSubmit = (e: FormEvent) => {
         e.preventDefault()
 
-        if(cartProducts.length === 0) {
+        if (cartProducts.length === 0) {
             alert('O carrinho está vazio')
             return
         }
@@ -33,6 +34,7 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                 address,
                 phoneNumber,
                 orderDetails: productsNames,
+                paymentMethod,
                 observations
             })
         }).then(response => {
@@ -58,7 +60,7 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
     }
 
     return (
-        <div className="bg-gray-100 p-4 rounded-lg max-h-[30rem]">
+        <div className="bg-gray-100 p-4 rounded-lg max-h-[35rem]">
             <h2 className="font-semibold mb-4">Dados de entrega</h2>
 
             <form onSubmit={onHandleSubmit} className="checkoutForm">
@@ -87,6 +89,26 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                         onChange={e => setPhoneNumber(e.target.value)}
                         value={phoneNumber}
                     />
+                </div>
+
+                <div>
+                    <label>Método de pagamento</label> <br />
+                    <small>O pagamento é feito na entrega</small>
+
+                    <div className="flex items-center gap-8">
+                        <div className="flex items-center gap-1">
+                            <label htmlFor="money">Dinheiro</label> <br />
+                            <input type="radio" name="paymentMethod" id="money"
+                                value={'Dinheiro'} onChange={e => { setPaymentMethod('Dinheiro'), console.log(paymentMethod) }} required
+                            />
+                        </div>
+
+                        <div className="flex items-center gap-1">
+                            <label htmlFor="creditCard">Cartão</label>
+                            <input type="radio" name="paymentMethod" id="creditCard"
+                                value={'Cartão'} onChange={() => { setPaymentMethod('Cartão'), console.log(paymentMethod) }} required />
+                        </div>
+                    </div>
                 </div>
 
                 <div>
