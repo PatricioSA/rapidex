@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import { AppProvider } from "@/context/AppProvider";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,9 +24,7 @@ export default function RootLayout({
           <AppProvider>
             <Header />
             {children}
-            <footer className="text-center text-gray-500 border p-8 mt-16">
-              &copy; 2024 Todos os direitos reservados
-            </footer>
+            <Footer/>
           </AppProvider>
         </main>
       </body>
