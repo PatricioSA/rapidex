@@ -4,6 +4,7 @@
 import CheckoutForm from "@/components/CheckoutForm";
 import Titles from "@/components/layout/Titles";
 import { CartContext } from "@/context/AppProvider";
+import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 import { GoTrash } from "react-icons/go";
@@ -33,15 +34,12 @@ export default function CartPage() {
                         <div key={index}
                             className="flex items-center gap-4 border-b
                             border-b-red-300 mb-2 py-2">
-                            <div className="w-24">
-                                <img
-                                    src={product.image}
-                                    alt={`imagem ${product.name}`}
-                                    width={240}
-                                    height={240}
-                                    loading='lazy'
-                                />
-                            </div>
+
+                            <Image
+                                src={product.image}
+                                alt={`imagem ${product.name}`}
+                                width={100} height={100}
+                            />
 
                             <div className="grow">
                                 <h3 className="font-semibold">{product.name}</h3>
@@ -50,7 +48,7 @@ export default function CartPage() {
                             </div>
 
                             <div>
-                                <button onClick={() => removeCartProducts(index)}>
+                                <button type="button" aria-label="Deletar" onClick={() => removeCartProducts(index)}>
                                     <GoTrash size={25} />
                                 </button>
                             </div>

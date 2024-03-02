@@ -28,12 +28,14 @@ export default function MenuItem({ product, image }: { product: Product, image: 
                 hover:shadow-md hover:shadow-black/25 transition-all">
 
                 <div onClick={onHandleCardClick} className="hover:cursor-pointer">
-                    <img src={image} alt={name}
-                        className="max-h-48 block mx-auto"
-                        loading="lazy"
+                    <Image
+                        src={image}
+                        alt={name}
+                        width={200} height={200}
+                        className="mx-auto"
                     />
 
-                    <h4 className="font-semibold text-xl my-3">{name}</h4>
+                    <h2 className="font-semibold text-xl my-3">{name}</h2>
 
                     <p className="text-gray-500 text-sm line-clamp-1">{description}</p>
                 </div>

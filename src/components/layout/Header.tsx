@@ -23,7 +23,9 @@ export default function Header() {
                 </Link>
 
                 <div className="flex items-center gap-2">
-                    <button onClick={() => setMobileNavOpen(prevState => !prevState)}>
+                    <button type="button" aria-label="Abrir e Fechar menu de navegação"
+                        onClick={() => setMobileNavOpen(prevState => !prevState)}
+                    >
                         <TfiMenu size={25} />
                     </button>
                     <Link

@@ -60,7 +60,7 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
     }
 
     return (
-        <div className="bg-gray-100 p-4 rounded-lg max-h-[35rem]">
+        <div className="bg-gray-200 p-4 rounded-lg max-h-[35rem]">
             <h2 className="font-semibold mb-4">Dados de entrega</h2>
 
             <form onSubmit={onHandleSubmit} className="checkoutForm">
