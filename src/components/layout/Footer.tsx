@@ -6,8 +6,8 @@ export default function Footer() {
                 <section>
                     <h2 className="font-semibold">Horário de Funcionamento</h2>
                     <p>
-                        Segunda a Sexta: <time>18:00</time> - <time>00:00</time> <br />
-                        Sábado: <time>18:00</time> - <time>02:00</time>
+                        Terça a Sexta: <time>18:00</time> - <time>00:00</time> <br />
+                        Sábado e Domingo: <time>18:00</time> - <time>02:00</time>
                     </p>
                 </section>
 
