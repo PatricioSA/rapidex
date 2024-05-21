@@ -4,12 +4,22 @@ import { CartContext } from "@/context/AppProvider"
 import { useRouter } from "next/navigation"
 import { FormEvent, useContext, useState } from "react"
 
+interface DeliveryData {
+    name: string;
+    address: string;
+    phoneNumber: string;
+    observations: string;
+    paymentMethod: string;
+}
+
 export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
-    const [name, setName] = useState('')
-    const [address, setAddress] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
-    const [observations, setObservations] = useState('')
-    const [paymentMethod, setPaymentMethod] = useState('')
+    const [deliveryData, setDeliveryData] = useState<DeliveryData>({
+        name: '',
+        address: '',
+        phoneNumber: '',
+        observations: '',
+        paymentMethod: ''
+    });
 
     const { cartProducts, clearCart } = useContext(CartContext)
     const router = useRouter()
@@ -30,16 +40,11 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name,
-                address,
-                phoneNumber,
+                ...deliveryData,
                 orderDetails: productsNames,
-                paymentMethod,
-                observations
             })
         }).then(response => {
             if (response.ok) {
-                console.log('Mensagem enviada com sucesso');
                 clearCart()
                 clearInputs()
                 router.push('/order')
@@ -52,11 +57,22 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
         });
     }
 
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setDeliveryData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
     const clearInputs = () => {
-        setName('')
-        setAddress('')
-        setPhoneNumber('')
-        setObservations('')
+        setDeliveryData({
+            name: '',
+            address: '',
+            phoneNumber: '',
+            observations: '',
+            paymentMethod: ''
+        });
     }
 
     return (
@@ -67,16 +83,16 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                 <div>
                     <label htmlFor="name">Nome</label> <br />
                     <input type="text" name="name" id="name" required
-                        onChange={e => setName(e.target.value)}
-                        value={name}
+                        onChange={handleInputChange}
+                        value={deliveryData.name}
                     />
                 </div>
 
                 <div>
                     <label htmlFor="address">Endereço</label> <br />
                     <input type="text" name="address" id="address" placeholder="Rua Compre aqui, 145 - Bairro" required
-                        onChange={e => setAddress(e.target.value)}
-                        value={address}
+                        onChange={handleInputChange}
+                        value={deliveryData.address}
                     />
                 </div>
 
@@ -86,8 +102,8 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                         <small>Format: 32 91234-4567</small>
                     </label> <br />
                     <input type="tel" name="phoneNumber" id="phoneNumber" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="32 91234-4567" required
-                        onChange={e => setPhoneNumber(e.target.value)}
-                        value={phoneNumber}
+                        onChange={handleInputChange}
+                        value={deliveryData.phoneNumber}
                     />
                 </div>
 
@@ -99,14 +115,14 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                         <div className="flex items-center gap-1">
                             <label htmlFor="money">Dinheiro</label> <br />
                             <input type="radio" name="paymentMethod" id="money"
-                                value={'Dinheiro'} onChange={e => { setPaymentMethod('Dinheiro'), console.log(paymentMethod) }} required
+                                value={'Dinheiro'} onChange={handleInputChange} required
                             />
                         </div>
 
                         <div className="flex items-center gap-1">
                             <label htmlFor="creditCard">Cartão</label>
                             <input type="radio" name="paymentMethod" id="creditCard"
-                                value={'Cartão'} onChange={() => { setPaymentMethod('Cartão'), console.log(paymentMethod) }} required />
+                                value={'Cartão'} onChange={handleInputChange} required />
                         </div>
                     </div>
                 </div>
@@ -114,8 +130,8 @@ export default function CheckoutForm({ totalPrice }: { totalPrice: number }) {
                 <div>
                     <label htmlFor="observations">Observações</label> <br />
                     <textarea name="observations" id="observations"
-                        onChange={e => setObservations(e.target.value)}
-                        value={observations}
+                        onChange={handleInputChange}
+                        value={deliveryData.observations}
                     ></textarea>
                 </div>
 
